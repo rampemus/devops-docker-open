@@ -1,0 +1,16 @@
+rampemus$ docker container ls -a
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS                  PORTS               NAMES
+53f5750f3624        devopsdockeruh/exec_bash_exercise   "node index"        23 hours ago        Up 23 hours                                 hardcore_borg
+9d4dd453eb20        devopsdockeruh/pull_exercise        "node index.js"     4 days ago          Exited (0) 4 days ago                       stoic_bhaskara
+50df0d68d932        devopsdockeruh/pull_exercise        "node index.js"     4 days ago          Exited (0) 4 days ago                       cocky_buck
+
+rampemus$ docker exec -it 53f bash
+
+root@53f5750f3624:/usr/app# tail -f ./logs.txt
+Fri, 04 Oct 2019 09:11:01 GMT
+Secret message is:
+"Docker is easy"
+Fri, 04 Oct 2019 09:11:07 GMT
+Fri, 04 Oct 2019 09:11:10 GMT
+Fri, 04 Oct 2019 09:11:13 GMT
+Fri, 04 Oct 2019 09:11:16 GMT

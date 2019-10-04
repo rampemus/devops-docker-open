@@ -1,0 +1,6 @@
+rampemus$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+rampemus$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+mongo               latest              394204d45d87        6 months ago        410MB
+node                8.4-alpine          016382f39a51        2 years ago         66.3MB
