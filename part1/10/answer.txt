@@ -1,0 +1,4 @@
+rampemus$ git clone https://github.com/docker-hy/frontend-example-docker .
+rampemus$ docker build -t frontend .
+rampemus$ docker docker run -p 3003:5000 frontend
+rampemus$ open -a Safari "http://localhost:3003"
