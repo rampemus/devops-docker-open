@@ -1,0 +1,5 @@
+rampemus$ touch logs.txt
+rampemus$ docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+rampemus$ cat logs.txt
+Tue, 08 Oct 2019 11:58:13 GMT
+Tue, 08 Oct 2019 11:58:16 GMT
