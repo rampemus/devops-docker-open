@@ -1,0 +1,8 @@
+FROM node:8
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 8000
+ENV FRONT_URL=http://localhost:5000
+
+ENTRYPOINT ["/usr/local/bin/npm", "run", "start"]
