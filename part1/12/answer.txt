@@ -1,0 +1,17 @@
+Only dockerfiles are changed, so frontend works with the same commands:
+
+rampemus$ git clone https://github.com/docker-hy/frontend-example-docker
+rampemus$ cd frontend-example-docker
+Copy the Dockerfile-front to same folder and rename as Dockerfile
+rampemus$ docker build -t frontend .
+rampemus$ docker run -d -p 5000:5000 frontend
+
+and the same applies to backend:
+
+rampemus$ git clone https://github.com/docker-hy/backend-example-docker
+rampemus$ cd backend-example-docker
+Put the Dockerfile-back in the same folder and rename as Dockerfile
+rampemus$ docker build -t backend .
+rampemus$ docker run -v $(pwd)/logs.txt:/app/logs.txt -d -p 8000:8000 backend
+
+rampemus$ open -a Safari http://localhost:5000
