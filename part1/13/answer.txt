@@ -1,0 +1,7 @@
+rampemus$ git clone https://github.com/docker-hy/spring-example-project .
+
+Copy the dockerfile into the same folder
+
+rampemus$ docker build -t spring-example .
+rampemus$ docker run -p 8080:8080 spring-example
+rampemus$ open -a Safari http://localhost:8080
