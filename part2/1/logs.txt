@@ -1,0 +1,10 @@
+Fri, 11 Oct 2019 13:28:07 GMT
+Fri, 11 Oct 2019 13:28:10 GMT
+Fri, 11 Oct 2019 13:28:13 GMT
+Fri, 11 Oct 2019 13:28:16 GMT
+Secret message is:
+"Volume bind mount is easy"
+Fri, 11 Oct 2019 13:28:22 GMT
+Fri, 11 Oct 2019 13:28:25 GMT
+Fri, 11 Oct 2019 13:28:28 GMT
+Fri, 11 Oct 2019 13:28:31 GMT
