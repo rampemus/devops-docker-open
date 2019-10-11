@@ -1,0 +1,8 @@
+For running backend
+docker run -d -p 9000:9000 -e APPID=<secret> rampemus/weatherapp-backend
+
+after that run the frontend
+docker run -p 3000:3000 rampemus/weatherapp-frontend
+
+and open the browser at:
+http://localhost:3000
