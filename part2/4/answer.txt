@@ -1,0 +1,3 @@
+Because in console there was 10 bad request errors I ended up running:
+rampemus$ docker-compose up -d --scale compute=10
+and it seems to be working
