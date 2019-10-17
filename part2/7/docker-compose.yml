@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    ai-frontend:
+        image: frontend-ai
+        ports:
+            - 3000:3000
+        depends_on:
+            - ai-backend
+    ai-backend:
+        image: backend-ai
+        ports:
+            - 5000:5000
+        depends_on:
+            - ai-training
+        volumes:
+            - model:/src/model
+    ai-training:
+        image: training-ai
+        volumes:
+            - model:/src/model
+            - CVSdata:/src/data
+            - IMGdata:/src/imgs
+volumes:
+    model:
+    CVSdata:
+    IMGdata:
