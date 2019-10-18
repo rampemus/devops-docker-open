@@ -1,0 +1,3 @@
+Every button works already in the exercise 9 submission, but only if backend uses the new image that doesn't have the frontend url marked in the Dockerfile.
+
+In exercise 9 the frontend url is set up in the docker-compose.yml line 20 to allow CORS from http://localhost
