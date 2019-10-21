@@ -6,3 +6,11 @@ part2/3/frontend-example-docker
 
 # remove scaling-exercise folder
 part2/4/scaling-exercise
+
+# remove files just for building and composing exercise images
+part3/1/frontend
+part3/1/backend
+part3/1/data
+part3/1/logs.txt
+part3/1/nginx.conf
+part3/1/docker-compose.yml
