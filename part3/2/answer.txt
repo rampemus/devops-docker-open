@@ -1,0 +1,13 @@
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+0951bde9d176        7 seconds ago       /bin/sh -c #(nop)  ENTRYPOINT ["yle-dl"]        0B
+36643b0090e1        7 seconds ago       /bin/sh -c #(nop) WORKDIR /downloads            0B
+399957937533        8 seconds ago       /bin/sh -c apt-get update && apt-get install…   429MB
+657d80a6401d        4 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>           4 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
+<missing>           4 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B
+<missing>           4 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B
+<missing>           4 weeks ago         /bin/sh -c #(nop) ADD file:a5b5bea2fa5358461…   121MB    
+
+To build and run execute:
+docker build -t yle-dl-custom .
+docker run --rm -ti -v $(pwd):/downloads yle-dl-custom https://areena.yle.fi/1-50327211
