@@ -1,0 +1,12 @@
+FROM node:alpine
+
+RUN mkdir app && chown node ./app/
+
+USER node
+
+WORKDIR /app
+COPY . .
+RUN npm install
+ENV API_URL=http://localhost:8000
+
+ENTRYPOINT ["npm", "run", "start"]

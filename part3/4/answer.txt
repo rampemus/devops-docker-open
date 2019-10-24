@@ -1,0 +1,70 @@
+frontend BEFORE:
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+061eea47d2c2        7 seconds ago       /bin/sh -c #(nop)  ENTRYPOINT ["npm" "run" "…   0B
+07f9a5fa3c9e        7 seconds ago       /bin/sh -c #(nop)  ENV API_URL=http://localh…   0B
+dafb2003914c        8 seconds ago       /bin/sh -c npm install                          155MB
+d9015305d4be        57 seconds ago      /bin/sh -c #(nop) COPY dir:80796235b63b0e183…   385kB
+abf123cdf608        2 hours ago         /bin/sh -c #(nop) WORKDIR /app                  0B
+a23479ef895f        2 hours ago         /bin/sh -c #(nop)  USER app                     0B
+bb0053683eaf        2 hours ago         /bin/sh -c useradd -m -d /app app               335kB
+f37dced9a480        2 days ago          /bin/sh -c apt-get update && apt-get install…   145MB
+657d80a6401d        5 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>           5 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
+<missing>           5 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B
+<missing>           5 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B
+<missing>           5 weeks ago         /bin/sh -c #(nop) ADD file:a5b5bea2fa5358461…   121MB
+                                                                                total:  422MB
+frontend AFTER
+IMAGE               CREATED              CREATED BY                                      SIZE                COMMENT
+563f78f9788c        40 seconds ago       /bin/sh -c #(nop)  ENTRYPOINT ["npm" "run" "…   0B
+3f69392e7070        41 seconds ago       /bin/sh -c #(nop)  ENV API_URL=http://localh…   0B
+91689141c0f9        42 seconds ago       /bin/sh -c npm install                          155MB
+1765972eee21        About a minute ago   /bin/sh -c #(nop) COPY dir:add39056a45c5cb45…   385kB
+d04d7bf037e3        10 minutes ago       /bin/sh -c #(nop) WORKDIR /app                  0B
+b851d475461f        10 minutes ago       /bin/sh -c #(nop)  USER node                    0B
+a899be479e44        10 minutes ago       /bin/sh -c mkdir app && chown node ./app/       0B
+4eb3543f9812        13 hours ago         /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           13 hours ago         /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           13 hours ago         /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           13 hours ago         /bin/sh -c apk add --no-cache --virtual .bui…   5.5MB
+<missing>           13 hours ago         /bin/sh -c #(nop)  ENV YARN_VERSION=1.19.1      0B
+<missing>           13 hours ago         /bin/sh -c addgroup -g 1000 node     && addu…   94.1MB
+<missing>           14 hours ago         /bin/sh -c #(nop)  ENV NODE_VERSION=13.0.1      0B
+<missing>           2 days ago           /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>           2 days ago           /bin/sh -c #(nop) ADD file:fe1f09249227e2da2…   5.55MB
+                                                                                total:   261MB
+backend BEFORE:
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+385b09b1b44b        2 hours ago         /bin/sh -c #(nop)  ENTRYPOINT ["npm" "run" "…   0B
+13faaa53d8ed        2 hours ago         /bin/sh -c #(nop)  EXPOSE 8000                  0B
+67d0ec7441f4        2 hours ago         /bin/sh -c npm install                          58.4MB
+38f077e86c31        2 hours ago         /bin/sh -c #(nop) COPY dir:e8f2642ad3a8c4a31…   218kB
+abf123cdf608        2 hours ago         /bin/sh -c #(nop) WORKDIR /app                  0B
+a23479ef895f        2 hours ago         /bin/sh -c #(nop)  USER app                     0B
+bb0053683eaf        2 hours ago         /bin/sh -c useradd -m -d /app app               335kB
+f37dced9a480        2 days ago          /bin/sh -c apt-get update && apt-get install…   145MB
+657d80a6401d        5 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>           5 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
+<missing>           5 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B
+<missing>           5 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B
+<missing>           5 weeks ago         /bin/sh -c #(nop) ADD file:a5b5bea2fa5358461…   121MB
+                                                                                total:  325MB
+backend AFTER:
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+0fd7b3ebb1f7        13 seconds ago      /bin/sh -c #(nop)  ENTRYPOINT ["npm" "run" "…   0B
+2518d2506f2c        13 seconds ago      /bin/sh -c #(nop)  EXPOSE 8000                  0B
+36551d2e189c        14 seconds ago      /bin/sh -c npm install                          58.4MB
+ed9a23925d8e        41 seconds ago      /bin/sh -c #(nop) COPY dir:febcfe78f63562808…   218kB
+d04d7bf037e3        18 minutes ago      /bin/sh -c #(nop) WORKDIR /app                  0B
+b851d475461f        18 minutes ago      /bin/sh -c #(nop)  USER node                    0B
+a899be479e44        18 minutes ago      /bin/sh -c mkdir app && chown node ./app/       0B
+4eb3543f9812        13 hours ago        /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           13 hours ago        /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           13 hours ago        /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           13 hours ago        /bin/sh -c apk add --no-cache --virtual .bui…   5.5MB
+<missing>           13 hours ago        /bin/sh -c #(nop)  ENV YARN_VERSION=1.19.1      0B
+<missing>           13 hours ago        /bin/sh -c addgroup -g 1000 node     && addu…   94.1MB
+<missing>           14 hours ago        /bin/sh -c #(nop)  ENV NODE_VERSION=13.0.1      0B
+<missing>           2 days ago          /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>           2 days ago          /bin/sh -c #(nop) ADD file:fe1f09249227e2da2…   5.55MB
+                                                                                total:  163MB

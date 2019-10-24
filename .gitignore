@@ -14,3 +14,5 @@ part3/1/data
 part3/1/logs.txt
 part3/1/nginx.conf
 part3/1/docker-compose.yml
+part3/3build/
+part3/4build/
