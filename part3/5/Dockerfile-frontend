@@ -1,0 +1,12 @@
+FROM node:alpine as build-stage
+
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+ENV API_URL=http://localhost:8000
+RUN npm run-script build
+
+FROM nginx
+
+COPY --from=build-stage /app/dist/ /var/www/html
