@@ -1,0 +1,91 @@
+Sourcecode for this answer is available at: https://github.com/rampemus/weatherapp
+
+Frontend BEFORE
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+3a99c800428d        10 minutes ago      /bin/sh -c #(nop)  ENTRYPOINT ["serve" "-s" …   0B
+4891e81bd6fd        10 minutes ago      /bin/sh -c #(nop)  EXPOSE 3000                  0B
+1e9902fe40fa        10 minutes ago      /bin/sh -c npm install -g serve                 6.59MB
+084cc33af4ce        11 minutes ago      /bin/sh -c npm run build --prod                 923kB
+62877df60f7b        11 minutes ago      /bin/sh -c npm install                          405B
+2f716b631fa1        11 minutes ago      /bin/sh -c #(nop) COPY dir:a729bd87df607fa8d…   118MB
+dba47638acb9        12 minutes ago      /bin/sh -c #(nop) WORKDIR /frontend             0B
+a68faf70e589        10 days ago         /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           10 days ago         /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           10 days ago         /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           10 days ago         /bin/sh -c set -ex   && for key in     6A010…   5.47MB
+<missing>           10 days ago         /bin/sh -c #(nop)  ENV YARN_VERSION=1.17.3      0B
+<missing>           10 days ago         /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   62.7MB
+<missing>           10 days ago         /bin/sh -c #(nop)  ENV NODE_VERSION=10.16.3     0B
+<missing>           10 days ago         /bin/sh -c groupadd --gid 1000 node   && use…   333kB
+<missing>           11 days ago         /bin/sh -c set -ex;  apt-get update;  apt-ge…   562MB
+<missing>           11 days ago         /bin/sh -c apt-get update && apt-get install…   142MB
+<missing>           11 days ago         /bin/sh -c set -ex;  if ! command -v gpg > /…   7.81MB
+<missing>           11 days ago         /bin/sh -c apt-get update && apt-get install…   23.2MB
+<missing>           11 days ago         /bin/sh -c #(nop)  CMD ["bash"]                 0B
+<missing>           11 days ago         /bin/sh -c #(nop) ADD file:fdf0128645db4c8b9…   101MB
+                                                                                total:  1030MB
+frontend AFTER
+IMAGE               CREATED              CREATED BY                                      SIZE                COMMENT
+f7efac65d072        2 seconds ago        /bin/sh -c #(nop)  ENTRYPOINT ["serve" "-s" …   0B
+55ca4d9ec73f        3 seconds ago        /bin/sh -c #(nop)  USER node                    0B
+32501b3db567        3 seconds ago        /bin/sh -c #(nop)  EXPOSE 3000                  0B
+c4bd6a45ac4e        4 seconds ago        /bin/sh -c npm install -g serve                 6.32MB
+fabe2d0fac0f        13 seconds ago       /bin/sh -c npm run build --prod                 1.27MB
+a8df0a28f5f0        30 seconds ago       /bin/sh -c npm config set unsafe-perm=true      72B
+5afd5dd2e3d1        33 seconds ago       /bin/sh -c npm install                          136MB
+c3262e295af7        About a minute ago   /bin/sh -c #(nop) COPY dir:6388930868b2ac4f9…   1.62MB
+a74625b0a8af        10 minutes ago       /bin/sh -c #(nop) WORKDIR /frontend             0B
+50741c915038        25 minutes ago       /bin/sh -c mkdir frontend && chown node ./fr…   0B
+4eb3543f9812        4 days ago           /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           4 days ago           /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           4 days ago           /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           4 days ago           /bin/sh -c apk add --no-cache --virtual .bui…   5.5MB
+<missing>           4 days ago           /bin/sh -c #(nop)  ENV YARN_VERSION=1.19.1      0B
+<missing>           4 days ago           /bin/sh -c addgroup -g 1000 node     && addu…   94.1MB
+<missing>           4 days ago           /bin/sh -c #(nop)  ENV NODE_VERSION=13.0.1      0B
+<missing>           6 days ago           /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>           6 days ago           /bin/sh -c #(nop) ADD file:fe1f09249227e2da2…   5.55MB
+                                                                                total:   250MB
+Backend BEFORE
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+0675c392a009        8 seconds ago       /bin/sh -c #(nop)  ENTRYPOINT ["npm" "run" "…   0B
+0bab8f936908        9 seconds ago       /bin/sh -c #(nop)  EXPOSE 9000                  0B
+fcabda8bf4e4        9 seconds ago       /bin/sh -c #(nop)  ENV REFRESH_INTERVAL=10      0B
+9c64be086c37        10 seconds ago      /bin/sh -c npm install                          30.7MB
+e156d6c8aadd        32 seconds ago      /bin/sh -c #(nop) COPY dir:d4be095805176c9dd…   29.9MB
+33aef1ec772c        39 minutes ago      /bin/sh -c #(nop) WORKDIR /backend              0B
+a68faf70e589        10 days ago         /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           10 days ago         /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           10 days ago         /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           10 days ago         /bin/sh -c set -ex   && for key in     6A010…   5.47MB
+<missing>           10 days ago         /bin/sh -c #(nop)  ENV YARN_VERSION=1.17.3      0B
+<missing>           10 days ago         /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   62.7MB
+<missing>           10 days ago         /bin/sh -c #(nop)  ENV NODE_VERSION=10.16.3     0B
+<missing>           10 days ago         /bin/sh -c groupadd --gid 1000 node   && use…   333kB
+<missing>           11 days ago         /bin/sh -c set -ex;  apt-get update;  apt-ge…   562MB
+<missing>           11 days ago         /bin/sh -c apt-get update && apt-get install…   142MB
+<missing>           11 days ago         /bin/sh -c set -ex;  if ! command -v gpg > /…   7.81MB
+<missing>           11 days ago         /bin/sh -c apt-get update && apt-get install…   23.2MB
+<missing>           11 days ago         /bin/sh -c #(nop)  CMD ["bash"]                 0B
+<missing>           11 days ago         /bin/sh -c #(nop) ADD file:fdf0128645db4c8b9…   101MB
+                                                                                total:  965MB
+Backend AFTER
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+0061dc9a915a        8 seconds ago       /bin/sh -c #(nop)  ENTRYPOINT ["npm" "start"]   0B
+199242c1d442        9 seconds ago       /bin/sh -c #(nop)  EXPOSE 9000                  0B
+06ee1bcf5943        9 seconds ago       /bin/sh -c #(nop)  ENV REFRESH_INTERVAL=10      0B
+595e823236e9        10 seconds ago      /bin/sh -c npm install                          30.7MB
+e48c804a6fee        32 seconds ago      /bin/sh -c #(nop) COPY dir:33c21437e1116adb0…   29.9MB
+27bf6eaea153        9 minutes ago       /bin/sh -c #(nop) WORKDIR /backend              0B
+c61fedee19e0        9 minutes ago       /bin/sh -c #(nop)  USER node                    0B
+e2cf5411c62e        9 minutes ago       /bin/sh -c mkdir backend && chown node ./bac…   0B
+4eb3543f9812        4 days ago          /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           4 days ago          /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           4 days ago          /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           4 days ago          /bin/sh -c apk add --no-cache --virtual .bui…   5.5MB
+<missing>           4 days ago          /bin/sh -c #(nop)  ENV YARN_VERSION=1.19.1      0B
+<missing>           4 days ago          /bin/sh -c addgroup -g 1000 node     && addu…   94.1MB
+<missing>           4 days ago          /bin/sh -c #(nop)  ENV NODE_VERSION=13.0.1      0B
+<missing>           6 days ago          /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>           6 days ago          /bin/sh -c #(nop) ADD file:fe1f09249227e2da2…   5.55MB
+                                                                                total:  166MB
