@@ -1,0 +1,37 @@
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+launch 3 Amazon Linux 2 AMI instances
+access it via SSH: $ ssh -i /path/my-key-pair.pem ec2-user@<IPv4 Public IP>
+$ sudo yum update -y
+$ sudo amazon-linux-extras install docker -y
+$ sudo service docker start
+$ sudo usermod -a -G docker ec2-user
+exit and access via SSH again
+
+Name one of your machines as Manager
+
+https://gridscale.io/en/community/tutorials/how-to-create-a-docker-swarm-cluster/
+EXCEPTION: when using command:
+Manager$ docker swarm init --advertise-addr <IPv4 Public IP>
+go to AWS security terminal and open the port for the workers
+if you forgot your token:
+Manager$ docker swarm join-token worker
+
+Active swarm would now look like this:
+[ec2-user@ip-172-31-87-22 ~]$ docker node ls
+ID                            HOSTNAME                       STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+ztc73mldpgh0dl27xurr0ivjt *   ip-172-31-87-22.ec2.internal   Ready               Active              Leader              18.06.1-ce
+3optfyu9tfryxzbik6l9fs8j0     linuxkit-025000000001          Ready               Active                                  18.09.2
+pushtbccuti2qi5pkmj4eoire     linuxkit-025000000001          Ready               Active                                  18.09.2
+
+then access your manager and deploy the services
+https://docs.docker.com/v17.12/engine/swarm/services/
+manager$ git clone https://github.com/rampemus/weatherapp
+manager$ cp weatherapp/weatherapp-stack.yaml .
+manager$ docker stack deploy -c weatherapp-stack.yaml
+
+using command 'docker container ls' I found out that the containers are now running:
+manager: rampemus/weatherapp-backend:latest
+worker1: rampemus/weatherapp-frontend:latest
+worker2: rampemus/weatherapp-frontend:latest
+
+Finally open the Manager port 80 and 9000 from the AWS security terminal for the client to access
