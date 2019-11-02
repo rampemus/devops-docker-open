@@ -1,11 +1,11 @@
 https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
-launch 3 Amazon Linux 2 AMI instances
-access it via SSH: $ ssh -i /path/my-key-pair.pem ec2-user@<IPv4 Public IP>
+launch 3 EC2 Amazon Linux 2 AMI instances
+access them via SSH: $ ssh -i /path/my-key-pair.pem ec2-user@<IPv4 Public IP>
 $ sudo yum update -y
 $ sudo amazon-linux-extras install docker -y
 $ sudo service docker start
 $ sudo usermod -a -G docker ec2-user
-exit and access via SSH again
+exit and access via SSH again, for the next time this should be done with a script
 
 Name one of your machines as Manager
 
@@ -24,6 +24,7 @@ ztc73mldpgh0dl27xurr0ivjt *   ip-172-31-87-22.ec2.internal   Ready              
 pushtbccuti2qi5pkmj4eoire     linuxkit-025000000001          Ready               Active                                  18.09.2
 
 then access your manager and deploy the services
+
 https://docs.docker.com/v17.12/engine/swarm/services/
 manager$ git clone https://github.com/rampemus/weatherapp
 manager$ cp weatherapp/weatherapp-stack.yaml .
@@ -34,4 +35,4 @@ manager: rampemus/weatherapp-backend:latest
 worker1: rampemus/weatherapp-frontend:latest
 worker2: rampemus/weatherapp-frontend:latest
 
-Finally open the Manager port 80 and 9000 from the AWS security terminal for the client to access
+Finally open ports 80 and 9000 from the AWS security terminal for the client to access
